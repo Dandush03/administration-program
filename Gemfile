@@ -5,6 +5,7 @@ ruby '2.6.5'
 
 gem 'activestorage'
 gem 'bootsnap', require: false
+gem 'bootstrap-sass'
 gem 'bullet'
 gem 'cloudinary'
 gem 'devise'
