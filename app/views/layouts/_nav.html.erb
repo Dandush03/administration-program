@@ -1,0 +1,20 @@
+<ul>
+  <li>
+    <%= link_to root_path do %>
+      <i class="fas fa-home"></i>
+      <p>HOME</p>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to organizations_path do %>
+      <i class="fas fa-user-alt"></i>
+      <p>ORGANIZATION</p>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to organization_clients_path(1) do %>
+      <i class="fas fa-user-alt"></i>
+      <p>CONTACTS</p>
+    <% end %>
+  </li>
+</ul>

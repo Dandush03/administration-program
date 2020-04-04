@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @client.name %>
+</p>
+<p>
+  <strong>Display name:</strong>
+  <%= @client.display_name %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @client.email %>
+</p>
+<p>
+  <strong>Currency:</strong>
+  <%= @client.currency %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @client.user_id %>
+</p>
+<td><%= link_to 'Edit', edit_organization_client_path(@organization,@client) %></td>
+<%= link_to 'Back', organization_clients_path(@organization) %>
