@@ -12,7 +12,7 @@ $header-color: rgba(80, 164, 226, 1);
 $menu-color: rgba(36, 49, 71, 1);
 $body-color: linear-gradient(170deg, rgb(106, 175, 208), rgb(100, 129, 129));
 $link-btn-color: rgba(36, 49, 71, .7);
-$link-color: white;
+$link-color: rgb(255, 255, 255);
 
 * {
   box-sizing: border-box;
@@ -24,10 +24,10 @@ html {
 
 body {
   background: $body-color;
-  position: relative;
   margin: 0;
-  padding: 0;
   min-height: 100%;
+  padding: 0;
+  position: relative;
 }
 
 button {
@@ -39,155 +39,87 @@ button {
   display: flex;
   flex-direction: row;
 
-  &>:nth-child(even) {
-    background-color: $link-btn-color*2;
+  >:nth-child(even) {
+    background-color: $link-btn-color * 2;
     color: $link-color;
   }
 
-  &>:nth-child(odd) {
-    background-color: $link-btn-color*3;
+  >:nth-child(odd) {
+    background-color: $link-btn-color * 3;
     color: $link-color;
   }
 
-  &>:first-child {
-    &::before {
-      content: "";
+  >:first-child {
+    ::before {
+      content: '';
     }
   }
 
   a {
-    border: $space/5 solid $link-color;
-    ;
+    border: $space / 5 solid $link-color;
     border-radius: $space;
-    padding: $space*2;
-    margin: $space*2;
-    text-decoration: none;
+    margin: $space * 2;
+    padding: $space * 2;
     position: relative;
+    text-decoration: none;
 
     &::before {
-      font-size: $font-size*1.5;
-      line-height: $font-size*.5;
-      position: absolute;
-      content: "|";
       color: $link-color;
+      content: '|';
       display: block;
-      right: calc(100% + #{$space*1.5});
+      font-size: $font-size * 1.5;
+      line-height: $font-size * .5;
+      position: absolute;
+      right: calc(100% + #{$space * 1.5});
     }
   }
 }
 
-header.top-bar {
+.top-bar {
   background-color: $header-color;
   display: flex;
   justify-content: space-between;
 
   i {
     align-self: center;
-    margin: $space*6;
+    margin: $space * 6;
     transform: scale(1.5);
 
     path {
-      fill: white;
+      fill: $link-color;
     }
   }
 }
 
-menu.left-menu {
+.left-menu {
   background-color: $menu-color;
   margin: 0;
   padding: 0;
 
-  &>.current_user_pic {
-    display: flex;
-    background-color: $profile-menu-color;
-    border-bottom: $space/5 solid $border-color;
-    height: $space*15;
-
-    figure {
-      width: $space*14;
-      height: $space*14;
-      overflow: hidden;
-      margin: 0;
-      padding: $space*1;
-
-      img {
-        width: $p-100;
-        height: $p-100;
-      }
-    }
-
-    &>h4 {
-      margin-left: $space;
-      align-self: center;
-      color: $font-menu-color;
-      text-transform: uppercase;
-      font-size: $p-100*1.2;
-    }
-  }
-
-  &>.current_user_info {
-    display: flex;
-    background-color: $profile-menu-color;
-    border-bottom: $space/5 solid $border-color;
-    height: $space*15;
-
-    &>div {
-      display: flex;
-      flex: 0 0 $p-100;
-
-      &>div {
-        align-self: center;
-        flex: 0 0 $p-100/2;
-        display: flex;
-        flex-direction: column;
-
-        p,
-        span {
-          align-self: center;
-          text-align: center;
-          width: $p-100;
-          color: $font-menu-color;
-          margin: 0;
-          padding: 0;
-        }
-
-        p {
-          font-weight: bolder;
-          font-size: $p-100*1.2;
-        }
-
-      }
-
-      &>:first-child {
-        border-right: $space/5 solid $border-color;
-      }
-    }
-  }
-
-  &>ul {
-    list-style: none;
+  >ul {
     display: flex;
     flex-direction: column;
+    list-style: none;
 
-    &>li {
+    >li {
       display: flex;
       flex-direction: row;
+    }
+  }
 
-      &>a {
-        display: flex;
-        flex-direction: row;
-        color: $font-menu-color;
-        text-decoration: none;
+  a {
+    color: $font-menu-color;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
 
-        &>:first-child {
-          align-self: center;
-          flex: 0 0 $space*5
-        }
+    >:first-child {
+      align-self: center;
+      flex: 0 0 $space * 5;
+    }
 
-        path{
-          fill: $font-menu-color;
-        }
-      }
+    path {
+      fill: $font-menu-color;
     }
   }
 }
@@ -195,23 +127,23 @@ menu.left-menu {
 @media only screen and (min-width: $pad-width) {
   .grid-layouts {
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: $space*15 calc(100% - #{$space*15});
     grid-template-areas: 'menu header header'
       'menu main main';
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: $space * 15 calc(100% - #{$space * 15});
     min-height: 100vh;
   }
 
-  menu.left-menu {
+  .left-menu {
     grid-area: menu;
   }
 
-  header.top-bar {
+  .top-bar {
     grid-area: header;
   }
 
-  main.main-content {
-    grid-area: main;
+  .main-content {
     background-color: violet;
+    grid-area: main;
   }
 }

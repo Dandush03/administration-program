@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'clients#index'
   resources :organizations do
     resources :clients
+    resources :org_branches
   end
   
   devise_for :users
