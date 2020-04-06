@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: [:show, :edit, :update, :destroy]
+  before_action :set_client, only: %i[show edit update destroy]
 
   # GET /clients
   # GET /clients.json
@@ -68,19 +68,20 @@ class ClientsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_client
-      @client = Client.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def client_params
-      att_create = %i[name display_name email currency user_id]
-      params.require(:client).permit(att_create)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_client
+    @client = Client.find(params[:id])
+  end
 
-    # Get the organization id by selected one (NEED IMPROVMENTS)
-    def get_org
-      @organization = Organization.first
-    end
+  # Only allow a list of trusted parameters through.
+  def client_params
+    att_create = %i[name display_name email currency user_id]
+    params.require(:client).permit(att_create)
+  end
+
+  # Get the organization id by selected one (NEED IMPROVMENTS)
+  def get_org
+    @organization = Organization.first
+  end
 end

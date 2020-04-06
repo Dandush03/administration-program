@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "org_branches/show", type: :view do
+RSpec.describe 'org_branches/show', type: :view do
   before(:each) do
     @org_branch = assign(:org_branch, OrgBranch.create!(
-      name: "Name",
-      country: "Country",
-      state: "State",
-      addres: "Addres",
-      organizations: nil
-    ))
+                                        name: 'Name',
+                                        country: 'Country',
+                                        state: 'State',
+                                        addres: 'Addres',
+                                        organizations: nil
+                                      ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Country/)

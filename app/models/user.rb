@@ -2,16 +2,16 @@ class User < ApplicationRecord
   attr_writer :login
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable, :timeoutable, 
-    :recoverable, :rememberable, :validatable, :lockable, :trackable,
-    authentication_keys: [:login]
+  devise :database_authenticatable, :registerable, :timeoutable,
+         :recoverable, :rememberable, :validatable, :lockable, :trackable,
+         authentication_keys: [:login]
 
   validates :full_name, presence: true, length: { maximum: 30 }
   validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 15 }
   # to confrim with email add :confirmable,
 
   has_many :org_user_list
-  
+
   def login
     @login || username || email
   end

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :org_user_list do
-    users { "" }
-    organizations { "" }
+    users { '' }
+    organizations { '' }
   end
 end

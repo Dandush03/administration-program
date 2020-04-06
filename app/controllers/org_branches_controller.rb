@@ -1,5 +1,5 @@
 class OrgBranchesController < ApplicationController
-  before_action :set_org_branch, only: [:show, :edit, :update, :destroy]
+  before_action :set_org_branch, only: %i[show edit update destroy]
 
   # GET /org_branches
   # GET /org_branches.json
@@ -9,8 +9,7 @@ class OrgBranchesController < ApplicationController
 
   # GET /org_branches/1
   # GET /org_branches/1.json
-  def show
-  end
+  def show; end
 
   # GET /org_branches/new
   def new
@@ -18,8 +17,7 @@ class OrgBranchesController < ApplicationController
   end
 
   # GET /org_branches/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /org_branches
   # POST /org_branches.json
@@ -62,13 +60,14 @@ class OrgBranchesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_org_branch
-      @org_branch = OrgBranch.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def org_branch_params
-      params.require(:org_branch).permit(:name, :country, :state, :addres, :clients_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_org_branch
+    @org_branch = OrgBranch.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def org_branch_params
+    params.require(:org_branch).permit(:name, :country, :state, :addres, :clients_id)
+  end
 end

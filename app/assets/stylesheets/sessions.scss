@@ -106,7 +106,7 @@ $font-size:1em;
     }
 
     &>.actions {
-      display: flex;
+      display: flex ;
       margin: $space*8 $space*6 $space*12 $space*6;
 
       &>input {
@@ -115,8 +115,8 @@ $font-size:1em;
         width: 100%;
         color: $form-input-color;
         background-color: $form-field-color*3;
-        border: white solid $space/5;
         border-radius: $space;
+        border: white solid $space/5;
       }
     }
   }
