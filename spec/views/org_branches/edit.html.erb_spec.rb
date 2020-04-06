@@ -1,14 +1,17 @@
-require 'rails_helper'
+require('rails_helper')
 
-RSpec.describe 'org_branches/edit', type: :view do
+RSpec.describe('org_branches/edit', type: :view) do
   before(:each) do
-    @org_branch = assign(:org_branch, OrgBranch.create!(
-                                        name: 'MyString',
-                                        country: 'MyString',
-                                        state: 'MyString',
-                                        addres: 'MyString',
-                                        organizations: nil
-                                      ))
+    @org_branch = assign(
+      :org_branch,
+      OrgBranch.create!(
+        name: 'MyString',
+        country: 'MyString',
+        state: 'MyString',
+        addres: 'MyString',
+        organizations: nil
+      )
+    )
   end
 
   it 'renders the edit org_branch form' do

@@ -1,23 +1,26 @@
-require 'rails_helper'
+require('rails_helper')
 
-RSpec.describe 'org_branches/index', type: :view do
+RSpec.describe('org_branches/index', type: :view) do
   before(:each) do
-    assign(:org_branches, [
-             OrgBranch.create!(
-               name: 'Name',
-               country: 'Country',
-               state: 'State',
-               addres: 'Addres',
-               organizations: nil
-             ),
-             OrgBranch.create!(
-               name: 'Name',
-               country: 'Country',
-               state: 'State',
-               addres: 'Addres',
-               organizations: nil
-             )
-           ])
+    assign(
+      :org_branches,
+      [
+        OrgBranch.create!(
+          name: 'Name',
+          country: 'Country',
+          state: 'State',
+          addres: 'Addres',
+          organizations: nil
+        ),
+        OrgBranch.create!(
+          name: 'Name',
+          country: 'Country',
+          state: 'State',
+          addres: 'Addres',
+          organizations: nil
+        )
+      ]
+    )
   end
 
   it 'renders a list of org_branches' do

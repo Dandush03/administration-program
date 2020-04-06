@@ -1,15 +1,18 @@
-require 'rails_helper'
+require('rails_helper')
 
-RSpec.describe 'organizations/new', type: :view do
+RSpec.describe('organizations/new', type: :view) do
   before(:each) do
-    assign(:organization, Organization.new(
-                            name: 'MyString',
-                            rif: 'MyString',
-                            country: 'MyString',
-                            state: 'MyString',
-                            street: 'MyString',
-                            logo: 'MyString'
-                          ))
+    assign(
+      :organization,
+      Organization.new(
+        name: 'MyString',
+        rif: 'MyString',
+        country: 'MyString',
+        state: 'MyString',
+        street: 'MyString',
+        logo: 'MyString'
+      )
+    )
   end
 
   it 'renders new organization form' do

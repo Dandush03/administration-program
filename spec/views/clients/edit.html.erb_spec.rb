@@ -1,14 +1,17 @@
-require 'rails_helper'
+require('rails_helper')
 
-RSpec.describe 'clients/edit', type: :view do
+RSpec.describe('clients/edit', type: :view) do
   before(:each) do
-    @client = assign(:client, Client.create!(
-                                name: 'MyString',
-                                display_name: 'MyString',
-                                email: 'MyString',
-                                currency: 'MyString',
-                                user_id: 1
-                              ))
+    @client = assign(
+      :client,
+      Client.create!(
+        name: 'MyString',
+        display_name: 'MyString',
+        email: 'MyString',
+        currency: 'MyString',
+        user_id: 1
+      )
+    )
   end
 
   it 'renders the edit client form' do

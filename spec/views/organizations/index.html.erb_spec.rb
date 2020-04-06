@@ -1,25 +1,28 @@
-require 'rails_helper'
+require('rails_helper')
 
-RSpec.describe 'organizations/index', type: :view do
+RSpec.describe('organizations/index', type: :view) do
   before(:each) do
-    assign(:organizations, [
-             Organization.create!(
-               name: 'Name',
-               rif: 'Rif',
-               country: 'Country',
-               state: 'State',
-               street: 'Street',
-               logo: 'Logo'
-             ),
-             Organization.create!(
-               name: 'Name',
-               rif: 'Rif',
-               country: 'Country',
-               state: 'State',
-               street: 'Street',
-               logo: 'Logo'
-             )
-           ])
+    assign(
+      :organizations,
+      [
+        Organization.create!(
+          name: 'Name',
+          rif: 'Rif',
+          country: 'Country',
+          state: 'State',
+          street: 'Street',
+          logo: 'Logo'
+        ),
+        Organization.create!(
+          name: 'Name',
+          rif: 'Rif',
+          country: 'Country',
+          state: 'State',
+          street: 'Street',
+          logo: 'Logo'
+        )
+      ]
+    )
   end
 
   it 'renders a list of organizations' do

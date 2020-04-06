@@ -1,14 +1,17 @@
-require 'rails_helper'
+require('rails_helper')
 
-RSpec.describe 'org_branches/new', type: :view do
+RSpec.describe('org_branches/new', type: :view) do
   before(:each) do
-    assign(:org_branch, OrgBranch.new(
-                          name: 'MyString',
-                          country: 'MyString',
-                          state: 'MyString',
-                          addres: 'MyString',
-                          organizations: nil
-                        ))
+    assign(
+      :org_branch,
+      OrgBranch.new(
+        name: 'MyString',
+        country: 'MyString',
+        state: 'MyString',
+        addres: 'MyString',
+        organizations: nil
+      )
+    )
   end
 
   it 'renders new org_branch form' do

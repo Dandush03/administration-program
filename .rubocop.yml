@@ -1,5 +1,4 @@
 AllCops:
-  EnabledByDefault: true
   
   Exclude:
     - "db/schema.rb"

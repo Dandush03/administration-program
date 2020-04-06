@@ -1,15 +1,18 @@
-require 'rails_helper'
+require('rails_helper')
 
-RSpec.describe 'organizations/edit', type: :view do
+RSpec.describe('organizations/edit', type: :view) do
   before(:each) do
-    @organization = assign(:organization, Organization.create!(
-                                            name: 'MyString',
-                                            rif: 'MyString',
-                                            country: 'MyString',
-                                            state: 'MyString',
-                                            street: 'MyString',
-                                            logo: 'MyString'
-                                          ))
+    @organization = assign(
+      :organization,
+      Organization.create!(
+        name: 'MyString',
+        rif: 'MyString',
+        country: 'MyString',
+        state: 'MyString',
+        street: 'MyString',
+        logo: 'MyString'
+      )
+    )
   end
 
   it 'renders the edit organization form' do

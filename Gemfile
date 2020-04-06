@@ -1,20 +1,20 @@
-source 'https://rubygems.org'
+source('https://rubygems.org')
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.5'
+ruby('2.6.5')
 
-gem 'activestorage'
-gem 'bootsnap', require: false
-gem 'bullet'
-gem 'cloudinary'
-gem 'devise'
-gem 'jbuilder'
-gem 'jquery-rails'
-gem 'puma'
-gem 'rails'
-gem 'sass-rails'
-gem 'turbolinks'
-gem 'webpacker'
+gem('activestorage')
+gem('bootsnap', require: false)
+gem('bullet')
+gem('cloudinary')
+gem('devise')
+gem('jbuilder')
+gem('jquery-rails')
+gem('puma')
+gem('rails')
+gem('sass-rails')
+gem('turbolinks')
+gem('webpacker')
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -46,4 +46,4 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem('tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby])
