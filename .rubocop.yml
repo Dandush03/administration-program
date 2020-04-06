@@ -1,4 +1,5 @@
 AllCops:
+  EnabledByDefault: true
   
   Exclude:
     - "db/schema.rb"
@@ -8,7 +9,6 @@ AllCops:
     - "Rakefile"
     - "README.md"
     - "node_modules/**/*"
-
   DisplayCopNames: true
 
 Layout/LineLength:
@@ -49,3 +49,15 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+Style/Copyright:
+  Enabled: false
+Style/DocumentationMethod:
+  Enabled: false
+Style/InlineComment:
+  Enabled: false
+Style/MissingElse:
+  Enabled: false
+Style/MethodCalledOnDoEndBlock:
+  Include:
+    - "spec/requests/*/**"
+  Enabled: false

@@ -4,32 +4,32 @@ class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
   def index
-    get_org
-    @clients = get_org.clients.all
+    org
+    @clients = org.clients.all
   end
 
   # GET /clients/1
   # GET /clients/1.json
   def show
-    get_org
+    org
   end
 
   # GET /clients/new
   def new
-    get_org
+    org
     @client = Client.new
   end
 
   # GET /clients/1/edit
   def edit
-    get_org
+    org
   end
 
   # POST /clients
   # POST /clients.json
   def create
-    @client = get_org.clients.new(client_params)
-    get_org
+    @client = org.clients.new(client_params)
+    org
     respond_to do |format|
       if @client.save
         format.html { redirect_to organization_clients_path(@organization), notice: 'Client was successfully created.' }
@@ -44,7 +44,7 @@ class ClientsController < ApplicationController
   # PATCH/PUT /clients/1
   # PATCH/PUT /clients/1.json
   def update
-    get_org
+    org
     respond_to do |format|
       if @client.update(client_params)
         format.html { redirect_to organization_clients_path(@organization), notice: 'Client was successfully updated.' }
@@ -59,7 +59,7 @@ class ClientsController < ApplicationController
   # DELETE /clients/1
   # DELETE /clients/1.json
   def destroy
-    get_org
+    org
     @client.destroy
     respond_to do |format|
       format.html { redirect_to request.referrer, notice: 'Client was successfully destroyed.' }
@@ -81,7 +81,7 @@ class ClientsController < ApplicationController
   end
 
   # Get the organization id by selected one (NEED IMPROVMENTS)
-  def get_org
+  def org
     @organization = Organization.first
   end
 end
