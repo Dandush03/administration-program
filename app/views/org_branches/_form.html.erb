@@ -1,0 +1,42 @@
+<%= form_with(model: org_branch, local: true) do |form| %>
+  <% if org_branch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(org_branch.errors.count, "error") %> prohibited this org_branch from being saved:</h2>
+
+      <ul>
+        <% org_branch.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :addres %>
+    <%= form.text_field :addres %>
+  </div>
+
+  <div class="field">
+    <%= form.label :organizations_id %>
+    <%= form.text_field :organizations_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

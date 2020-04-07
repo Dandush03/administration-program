@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @org_branch.name %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @org_branch.country %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @org_branch.state %>
+</p>
+
+<p>
+  <strong>Addres:</strong>
+  <%= @org_branch.addres %>
+</p>
+
+<p>
+  <strong>Organizations:</strong>
+  <%= @org_branch.organizations_id %>
+</p>
+
+<%= link_to 'Edit', edit_org_branch_path(@org_branch) %> |
+<%= link_to 'Back', org_branches_path %>

@@ -1,0 +1,150 @@
+// Place all the styles related to the Cultures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$pad-width: 768px;
+$space: 5px;
+$p-100: 100%;
+$font-size: 1em;
+$border-color: rgb(18, 26, 37);
+$profile-menu-color: rgba(29, 42, 62, 1);
+$font-menu-color: rgba(121, 142, 165, 1);
+$header-color: rgba(80, 164, 226, 1);
+$menu-color: rgba(36, 49, 71, 1);
+$body-color: linear-gradient(170deg, rgb(106, 175, 208), rgb(100, 129, 129));
+$link-btn-color: rgba(36, 49, 71, 0.7);
+$link-color: rgb(255, 255, 255);
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background: $body-color;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+}
+
+.navbar-user {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+
+  > :nth-child(even) {
+    background-color: $link-btn-color * 2;
+    color: $link-color;
+  }
+
+  > :nth-child(odd) {
+    background-color: $link-btn-color * 3;
+    color: $link-color;
+  }
+
+  > :first-child {
+    ::before {
+      content: "";
+    }
+  }
+
+  a {
+    border: $space / 5 solid $link-color;
+    border-radius: $space;
+    margin: $space * 2;
+    padding: $space * 2;
+    position: relative;
+    text-decoration: none;
+
+    &::before {
+      color: $link-color;
+      content: "|";
+      display: block;
+      font-size: $font-size * 1.5;
+      line-height: $font-size * 0.5;
+      position: absolute;
+      right: calc(100% + #{$space * 1.5});
+    }
+  }
+}
+
+.top-bar {
+  background-color: $header-color;
+  display: flex;
+  justify-content: space-between;
+
+  i {
+    align-self: center;
+    margin: $space * 6;
+    transform: scale(1.5);
+
+    path {
+      fill: $link-color;
+    }
+  }
+}
+
+.left-menu {
+  background-color: $menu-color;
+  margin: 0;
+  padding: 0;
+
+  > ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    > li {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  a {
+    color: $font-menu-color;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+
+    > :first-child {
+      align-self: center;
+      flex: 0 0 $space * 5;
+    }
+
+    path {
+      fill: $font-menu-color;
+    }
+  }
+}
+
+@media only screen and (min-width: $pad-width) {
+  .grid-layouts {
+    display: grid;
+    grid-template-areas:
+      "menu header header"
+      "menu main main";
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: $space * 15 calc(100% - #{$space * 15});
+    min-height: 100vh;
+  }
+
+  .left-menu {
+    grid-area: menu;
+  }
+
+  .top-bar {
+    grid-area: header;
+  }
+
+  .main-content {
+    background-color: violet;
+    grid-area: main;
+  }
+}
